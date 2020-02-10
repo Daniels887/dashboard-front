@@ -10,6 +10,8 @@ export default {
 export const LoginPage = () => (
     <>
       <GlobalStyle />
-      <Login />
+      <div style={{ marginBottom: '10px' }}>
+        <Login />
+      </div>
     </>
 );

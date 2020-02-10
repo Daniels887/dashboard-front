@@ -68,7 +68,6 @@ export const Button = styled.button`
   cursor: pointer;
   color: #fff;
   transition: all 0.5s;
-
     &:hover {
       background: ${darken(0.04, '#DF7401')};
     }
