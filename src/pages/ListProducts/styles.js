@@ -8,7 +8,12 @@ export const Container = styled.div`
 
 export const ProductList = styled.ul`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+  grid-template-columns: repeat(auto-fit, minmax(310px, 310px));
   grid-gap: 20px;
   list-style: none;
+  justify-content: center;
+
+  @media (max-width: 599px) {
+    grid-template-columns: repeat(auto-fit, minmax(310px, 100%));
+  }
 `;

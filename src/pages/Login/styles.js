@@ -64,12 +64,12 @@ export const Button = styled.button`
   padding: 0 20px;
   font-size: 16px;
   font-weight: bold;
-  background: #4682B4;
+  background: #DF7401;
   cursor: pointer;
   color: #fff;
   transition: all 0.5s;
 
     &:hover {
-      background: ${darken(0.04, '#4682B4')};
+      background: ${darken(0.04, '#DF7401')};
     }
 `;

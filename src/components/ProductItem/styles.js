@@ -29,7 +29,7 @@ export const Price = styled.span`
 `;
 
 export const Detail = styled(Link)`
-  background: #4682B4;
+  background: #DF7401;
   color: #fff;
   border: 0;
   border-radius: 4px;
@@ -40,7 +40,7 @@ export const Detail = styled(Link)`
   transition: all 0.5s;
 
     &:hover {
-        background: ${darken(0.05, '#4682B4')}
+        background: ${darken(0.05, '#DF7401')}
     }
 `;
 
