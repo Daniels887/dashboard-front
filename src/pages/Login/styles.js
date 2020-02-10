@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { darken } from 'polished';
 
 export const Container = styled.div`
   margin: 50px auto 0;
@@ -69,6 +70,6 @@ export const Button = styled.button`
   transition: all 0.5s;
 
     &:hover {
-      background: rgb(0,191,255);
+      background: ${darken(0.04, '#4682B4')};
     }
 `;
