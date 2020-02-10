@@ -21,11 +21,13 @@ export const Form = styled.form`
 `;
 
 export const LabelPhoto = styled.label`
-  border: ${props => props.thumbnail ? 0 : '1px dashed #ddd' };
+  border: ${props => props.dropzone ? '1px dashed #333' : '1px dashed #ddd' };
+  border-radius: 4px;
   height: 150px;
   cursor: pointer;
   background-size: cover;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-bottom: 20px;
@@ -65,4 +67,11 @@ export const Button = styled.button`
     &:hover {
       background: ${darken(0.04, '#DF7401')};
     }
+`;
+
+export const Title = styled.h2`
+  font-size: 16px;
+  line-height: 20px;
+  color: ${props => props.dropzone ? '#333' : '#ddd' };
+  margin-top: 5px;
 `;
