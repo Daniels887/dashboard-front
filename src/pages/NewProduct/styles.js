@@ -21,7 +21,7 @@ export const Form = styled.form`
 `;
 
 export const LabelPhoto = styled.label`
-  border: ${props => props.thumbnail ? 0 :  (props.dropzone ? '1px dashed #333' : '1px dashed #ddd')};
+  border: ${props => props.thumbnail ? 0 :  (props.dropzone ? `1px dashed ${props.theme.colors.onyx}` : `1px dashed ${props.theme.colors.gray}`)};
   border-radius: 4px;
   height: 150px;
   cursor: pointer;
@@ -42,13 +42,13 @@ export const Input = styled.input`
   border-radius: 4px;
   height: 45px;
   padding: 0 10px;
-  font-size: 16px;
+  font-size: ${props => props.theme.fontSizes.medium};
   margin-top: 8px;
 `;
 
 export const Label = styled.label`
-  font-size: 14px;
-  color: #444;
+  font-size: ${props => props.theme.fontSizes.small};
+  color: ${props => props.theme.colors.default};
   font-weight: bold;
 `;
 
@@ -58,20 +58,20 @@ export const Button = styled.button`
   width: 100%;
   height: 42px;
   padding: 0 20px;
-  font-size: 16px;
+  font-size: ${props => props.theme.fontSizes.medium};
   font-weight: bold;
-  background: #DF7401;
+  background: ${props => props.theme.colors.orange};
   cursor: pointer;
   color: #fff;
   transition: all 0.5s;
     &:hover {
-      background: ${darken(0.04, '#DF7401')};
+      background: ${props => darken(0.04, `${props.theme.colors.orange}`)};
     }
 `;
 
 export const Title = styled.h2`
-  font-size: 16px;
+  font-size: ${props => props.theme.fontSizes.medium};
   line-height: 20px;
-  color: ${props => props.dropzone ? '#333' : '#ddd' };
+  color: ${props => props.dropzone ? `${props.theme.colors.onyx}` : `${props.theme.colors.gray}` };
   margin-top: 5px;
 `;

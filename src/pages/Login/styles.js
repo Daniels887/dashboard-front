@@ -32,7 +32,7 @@ export const Logo = styled.img`
 export const Title = styled.h1`
   margin: 25px;
   text-align: center;
-  color: #444;
+  color: ${props => props.theme.colors.default};
 `;
 
 export const Form = styled.form`
@@ -42,18 +42,18 @@ export const Form = styled.form`
 
 export const Label = styled.label`
   font-size: 14px;
-  color: #444;
+  color: ${props => props.theme.colors.default};
   font-weight: bold;
   margin-bottom: 8px;
 `;
 
 export const Input = styled.input`
   margin-bottom: 20px;
-  border: 1px solid #ddd;
+  border: ${props => `1px solid ${props.theme.colors.gray}`};
   border-radius: 4px;
   height: 45px;
   padding: 0 10px;
-  font-size: 16px;
+  font-size: ${props => props.theme.fontSizes.medium};
 `;
 
 export const Button = styled.button`
@@ -62,13 +62,13 @@ export const Button = styled.button`
   width: 100%;
   height: 42px;
   padding: 0 20px;
-  font-size: 16px;
+  font-size: ${props => props.theme.fontSizes.medium};
   font-weight: bold;
-  background: #DF7401;
+  background: ${props => props.theme.colors.orange};
   cursor: pointer;
   color: #fff;
   transition: all 0.5s;
     &:hover {
-      background: ${darken(0.04, '#DF7401')};
+      background: ${ props => darken(0.04, `${props.theme.colors.orange}`)};
     }
 `;
