@@ -68,15 +68,15 @@ export default function NewProduct({ history }) {
           >
             {!thumbnail && (
               <>
-                <MdPhotoCamera size={20} color={drop ? `${theme.colors.onyx}` : `${theme.colors.gray}`} /> 
+                <MdPhotoCamera size={20} color={drop ? `${theme.colors.default}` : `${theme.colors.gray}`} /> 
                 <Title dropzone={drop}>Selecione ou arraste uma foto</Title>
               </>
             )}
           </LabelPhoto>
           <Input 
             type="file" 
-            id="photo" 
-            photo 
+            id="photo"
+            photo
             onChange={event => setThumbnail(event.target.files[0])} 
             ref={inputPhoto} 
             accept="image/*"

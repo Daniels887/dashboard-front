@@ -21,7 +21,7 @@ export const Form = styled.form`
 `;
 
 export const LabelPhoto = styled.label`
-  border: ${props => props.thumbnail ? 0 :  (props.dropzone ? `1px dashed ${props.theme.colors.onyx}` : `1px dashed ${props.theme.colors.gray}`)};
+  border: ${props => props.thumbnail ? 0 :  (props.dropzone ? `1px dashed ${props.theme.colors.default}` : `1px dashed ${props.theme.colors.gray}`)};
   border-radius: 4px;
   height: 150px;
   cursor: pointer;
@@ -72,6 +72,6 @@ export const Button = styled.button`
 export const Title = styled.h2`
   font-size: ${props => props.theme.fontSizes.medium};
   line-height: 20px;
-  color: ${props => props.dropzone ? `${props.theme.colors.onyx}` : `${props.theme.colors.gray}` };
+  color: ${props => props.dropzone ? `${props.theme.colors.default}` : `${props.theme.colors.gray}` };
   margin-top: 5px;
 `;
