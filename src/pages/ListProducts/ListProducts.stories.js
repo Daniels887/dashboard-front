@@ -28,7 +28,7 @@ export const ListProductPage = () => (
 
 export const Header = () => (
     <>
-      <HeaderComponent backButton/>
+      <HeaderComponent backButton addButton/>
       <GlobalStyle />
     </>
 );
