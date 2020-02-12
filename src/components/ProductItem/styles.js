@@ -11,13 +11,13 @@ export const Item = styled.li`
   flex-wrap: wrap;
 `;
 
-export const Imagem = styled.img`
+export const Image = styled.img`
   align-self: center;
   max-width: 150px;
 `;
 
 export const Title = styled.strong`
-  font-size: 16px;
+  font-size: ${props => props.theme.fontSizes.medium};
   line-height: 20px;
   color: ${props => props.theme.colors.onyx};
   margin-top: 5px;

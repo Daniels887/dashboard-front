@@ -4,7 +4,7 @@ import { RouteContext } from '../../App';
 import { ThemeProvider } from "styled-components";
 import theme from '../../styles/theme';
 
-import { Container, Form, LabelPhoto, Input, Label, Button, Title } from './styles';
+import { Container, Form, LabelPhoto, Input, Label, Button, Title, TextArea } from './styles';
 import { MdPhotoCamera } from 'react-icons/md';
 import { toast } from 'react-toastify';
 
@@ -85,6 +85,7 @@ export default function NewProduct({ history }) {
           <Input type="text" placeholder="Título" />
           <Label>Preço do Produto</Label>
           <Input type="text" placeholder="R$ 00,00" />
+          <TextArea placeholder="Descrição" />
           <Button type="submit">Cadastrar</Button>
         </Form>
       </Container>

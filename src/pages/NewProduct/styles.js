@@ -54,7 +54,7 @@ export const Label = styled.label`
 
 export const Button = styled.button`
   border: 0;
-  border-radius: 2px;
+  border-radius: 4px;
   width: 100%;
   height: 42px;
   padding: 0 20px;
@@ -74,4 +74,15 @@ export const Title = styled.h2`
   line-height: 20px;
   color: ${props => props.dropzone ? `${props.theme.colors.default}` : `${props.theme.colors.gray}` };
   margin-top: 5px;
+`;
+
+export const TextArea = styled.textarea`
+  border: 1px solid ${props => props.theme.colors.gray};
+  border-radius: 4px;
+  width: 100%;
+  height: 100px;
+  margin-bottom: 20px;
+  font-size: ${props => props.theme.fontSizes.medium};
+  padding: 5px 10px;
+  resize: none;
 `;
