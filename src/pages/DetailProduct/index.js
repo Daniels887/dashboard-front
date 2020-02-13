@@ -4,11 +4,11 @@ import { ThemeProvider } from "styled-components";
 import theme from '../../styles/theme';
 
 import Header from '../../components/Header';
-import ProductItem from '../../components/ProductItem';
+import RelatedProducts from '../../components/RelatedProducts';
 
 import parafuso from '../../assets/parafuso.jpg';
 
-import { Container, Content, Figure, Image, DataProduct, Title, Price, Description, RelatedProducts, MoreProducts, TitleProducts } from './styles';
+import { Container, Content, Figure, Image, DataProduct, Title, Price, Description } from './styles';
 import { RouteContext } from '../../App';
 
 export default function DetailProduct({ history }) {
@@ -38,14 +38,7 @@ export default function DetailProduct({ history }) {
             <Description>Um parafuso muito utilizado para tarefas simples!</Description>
           </DataProduct>
         </Content>
-        <MoreProducts>
-          <TitleProducts>Produtos relacionados! </TitleProducts>
-        </MoreProducts>
-        <RelatedProducts>
-          <ProductItem />
-          <ProductItem />
-          <ProductItem />
-        </RelatedProducts>
+        <RelatedProducts />
       </Container>
     </ThemeProvider>
   );
