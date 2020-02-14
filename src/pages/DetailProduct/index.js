@@ -14,7 +14,7 @@ import { RouteContext } from '../../App';
 import { formatPrice } from '../../utils/format';
 import api from '../../services/api';
 
-export default function DetailProduct({ history }) {
+export default function DetailProduct({ history, match }) {
   const zoom = useCallback((e) => {
     var zoomer = e.currentTarget;
     var x = 0;
@@ -30,17 +30,15 @@ export default function DetailProduct({ history }) {
   const [product, setProduct] = useState({});
   const [products, setProducts] = useState([]);
 
-  let { id } = useParams();
-
   useEffect(() => {
     (async function loadProduct() {
 
-      const response = await api.get(`product/${id}`);
+      const response = await api.get(`product/${match.params.id}`);
       const data = response.data
       setProduct({ ...data, priceFormatted: formatPrice(data.price)
       })
     })()
-  }, [id])
+  }, [match.params.id])
 
   useEffect(() => {
     (async function loadRelatedProducts() {
@@ -55,7 +53,7 @@ export default function DetailProduct({ history }) {
         <Header backButton goBack={() => goBack(history)}/> 
         <Content>
           <Figure onMouseMove={zoom} style={{ backgroundImage: `url(${product.image_url})`}}>
-            <Image src={product.image_url} alt="Parafuso" />
+            <Image src={product.image_url} alt={product.title} />
           </Figure>
           <DataProduct>
             <Title>{product.title}</Title>
@@ -63,7 +61,7 @@ export default function DetailProduct({ history }) {
             <Description>{product.description}</Description>
           </DataProduct>
         </Content>
-        <RelatedProducts products={products} id={id}/>
+        <RelatedProducts products={products} id={match.params.id}/>
       </Container>
     </ThemeProvider>
   );

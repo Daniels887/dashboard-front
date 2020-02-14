@@ -25,7 +25,8 @@ export default {
 
 export const DetailProductPage = () => (
   <>
-    <DetailProduct />
+    
+    <DetailProduct match={{params: {id: "5e46c2f3d146745e314ebd9d"} }} />
     <GlobalStyle />
   </>
 );
@@ -34,7 +35,10 @@ export const RelatedProducts = () => (
   <> 
     <ThemeProvider theme={theme}>
       <div  style={{ width: '985px', margin: '0 auto', marginTop: '10px' }}>
-        <Related />
+        <Related 
+          products={[{description: "Parafuso",title: "Parafuso", price: 5.5, image_url:"http://localhost:3333/files/parafuso_area_molhada_3,9x19mm_auto_atarraxante_philips_15un_86941435_23cc_600x600-1581695731653.jpg"}]} 
+          id={1}
+        />
       </div>
     </ThemeProvider>
     <GlobalStyle />
