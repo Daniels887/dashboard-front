@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 export const Container = styled.div`
   max-width: 1020px;
@@ -16,4 +16,22 @@ export const ProductList = styled.ul`
   @media (max-width: 599px) {
     grid-template-columns: repeat(auto-fit, minmax(250px, 100%));
   }
+`;
+const rotate = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+`;
+
+export const ContainerSpinner = styled.div`
+  display: flex;
+  justify-content: center;
+
+  svg {
+    animation: ${rotate} 2s linear infinite;
+  }
+  
 `;

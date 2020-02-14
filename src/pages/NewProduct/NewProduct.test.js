@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import { expect } from 'chai';
 import NewProduct from './index';
 import Header from '../../components/Header';
-import { Container, Form, LabelPhoto, Input, Label, Button, Title, TextArea } from './styles';
+import { Input, Button } from './styles';
 
 it('Page new product renderer without crashing', () => {
     shallow(<NewProduct />);

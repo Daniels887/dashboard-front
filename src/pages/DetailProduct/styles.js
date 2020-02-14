@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 export const Container = styled.div`
   max-width: 1020px;
@@ -72,4 +72,23 @@ export const Price = styled.span`
 export const Description = styled.p`
   font-size: ${props => props.theme.fontSizes.medium};
   color: ${props => props.theme.colors.onyx};
+`;
+
+const rotate = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+`;
+
+export const ContainerSpinner = styled.div`
+  display: flex;
+  justify-content: center;
+
+  svg {
+    animation: ${rotate} 2s linear infinite;
+  }
+  
 `;

@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { Container, ProductList} from './styles';
+import { Container, ProductList, ContainerSpinner} from './styles';
+import { FaSpinner } from 'react-icons/fa';
 import Header from '../../components/Header';
 import ProductItem from '../../components/ProductItem';
+
 import { RouteContext } from '../../App';
 
 import api from '../../services/api';
@@ -10,6 +12,7 @@ import { formatPrice } from '../../utils/format';
 export default function ListProducts({ history }) {
   const goBack = useContext(RouteContext);
   const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     (async function loadProducts() {
@@ -19,15 +22,17 @@ export default function ListProducts({ history }) {
         priceFormatted: formatPrice(product.price)
       }))
 
-      setProducts(data)
+      setProducts(data);
+      setLoading(false);
     })()
   }, [])
   
   return (
     <Container>
       <Header goBack={() => goBack(history)} addButton />
-      <ProductList>
-        { products.map(product => (
+      {!loading ? (
+        <ProductList>
+        {products.map(product => (
           <ProductItem 
             key={product._id} 
             id={product._id} 
@@ -37,6 +42,12 @@ export default function ListProducts({ history }) {
           />
         ))}
       </ProductList>
+      ): (
+        <ContainerSpinner>
+          <FaSpinner color="#FFF" size="50" />
+        </ContainerSpinner>
+      )}
+      
     </Container>
   );
 }
