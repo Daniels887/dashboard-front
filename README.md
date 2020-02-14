@@ -19,7 +19,7 @@ Para rodar os testes
 
 Para rodar o storybook
 
-### yarn run storybook
+### `yarn run storybook`
 
 ## Acesso ao back-end
 
