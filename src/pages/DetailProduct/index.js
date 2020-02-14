@@ -11,6 +11,7 @@ import { useParams } from "react-router-dom";
 import { Container, Content, Figure, Image, DataProduct, Title, Price, Description } from './styles';
 import { RouteContext } from '../../App';
 
+import { formatPrice } from '../../utils/format';
 import api from '../../services/api';
 
 export default function DetailProduct({ history }) {
@@ -35,7 +36,9 @@ export default function DetailProduct({ history }) {
     (async function loadProduct() {
 
       const response = await api.get(`product/${id}`);
-      setProduct(response.data)
+      const data = response.data
+      setProduct({ ...data, priceFormatted: formatPrice(data.price)
+      })
     })()
   }, [id])
 
@@ -56,7 +59,7 @@ export default function DetailProduct({ history }) {
           </Figure>
           <DataProduct>
             <Title>{product.title}</Title>
-            <Price>R$ {product.price}</Price>
+            <Price>{product.priceFormatted}</Price>
             <Description>{product.description}</Description>
           </DataProduct>
         </Content>

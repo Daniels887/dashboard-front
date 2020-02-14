@@ -12,7 +12,7 @@ export default function ProductItem({ image, price, title, id }) {
       <Item>
         <Image src={image} alt="Parafuso" />
         <Title>{title}</Title>
-        <Price>R$ {price}</Price>
+        <Price>{price}</Price>
         <Detail to={`/detail/${id}`}>
         <MdSearch size={20} color="#FFF" />
           <DetailTitle>Ver mais</DetailTitle>

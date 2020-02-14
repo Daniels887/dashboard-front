@@ -3,7 +3,9 @@ import { Container, ProductList} from './styles';
 import Header from '../../components/Header';
 import ProductItem from '../../components/ProductItem';
 import { RouteContext } from '../../App';
+
 import api from '../../services/api';
+import { formatPrice } from '../../utils/format';
 
 export default function ListProducts({ history }) {
   const goBack = useContext(RouteContext);
@@ -12,7 +14,12 @@ export default function ListProducts({ history }) {
   useEffect(() => {
     (async function loadProducts() {
       const response = await api.get('/products');
-      setProducts(response.data)
+      const data = response.data.map(product => ({
+        ...product,
+        priceFormatted: formatPrice(product.price)
+      }))
+
+      setProducts(data)
     })()
   }, [])
   
@@ -25,7 +32,7 @@ export default function ListProducts({ history }) {
             key={product._id} 
             id={product._id} 
             title={product.title} 
-            price={product.price} 
+            price={product.priceFormatted} 
             image={product.image_url} 
           />
         ))}

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import ProductItem from '../ProductItem';
 
 import {  Related, MoreProducts, TitleProducts  } from './styles';
+import { formatPrice } from '../../utils/format';
 
 export default function RelatedProducts({ products, id }) {
   const [productsRelated, setProductsRelated] = useState([]);
@@ -11,7 +12,12 @@ export default function RelatedProducts({ products, id }) {
       return product.id !== id;
     })
 
-    setProductsRelated(productsFinal);
+    const data = productsFinal.map(product => ({
+      ...product,
+      priceFormatted: formatPrice(product.price)
+    }))
+
+    setProductsRelated(data);
   }, [id, products])
   return (
     <>
@@ -23,7 +29,7 @@ export default function RelatedProducts({ products, id }) {
             <ProductItem 
               key={product._id}
               id={product._id}
-              price={product.price} 
+              price={product.priceFormatted} 
               image={product.image_url} 
               description={product.description} 
               title={product.title} 
