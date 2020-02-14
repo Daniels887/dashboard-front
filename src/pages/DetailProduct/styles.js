@@ -12,6 +12,10 @@ export const Content = styled.div`
   border-radius: 4px;
   padding: 30px;
   display: flex;
+
+  @media (max-width: 599px) {
+    flex-direction: column;
+  }
 `;
 
 export const Figure = styled.figure`
@@ -27,6 +31,7 @@ export const Figure = styled.figure`
   @media (max-width: 599px) {
     background-position: 30% 20% !important;
     background-size: cover !important;
+    margin-bottom: 20px;
   }
 `;
 
@@ -45,6 +50,11 @@ export const DataProduct = styled.div`
   flex-direction: column;
   justify-content: center;
   margin-left: 50px;
+
+  @media (max-width: 599px) {
+    margin-left: 0;
+    align-items: justify;
+  }
 `;
 
 export const Title = styled.strong`
