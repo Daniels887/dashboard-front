@@ -16,9 +16,9 @@ export default function Header({ goBack, backButton, addButton }) {
             <GoPlus size={20} color="#000" />
           </ContentIcon>
         )}
-        <Button onClick={goBack}>
+        <ContentIcon to="/">
             <GoSignOut size={20} color="#000" />
-        </Button>
+        </ContentIcon>
     </Container>
   );
 }

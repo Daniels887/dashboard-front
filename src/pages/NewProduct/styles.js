@@ -21,7 +21,7 @@ export const Form = styled.form`
 `;
 
 export const LabelPhoto = styled.label`
-  border: ${props => props.thumbnail ? 0 :  (props.dropzone ? `1px dashed ${props.theme.colors.default}` : `1px dashed ${props.theme.colors.gray}`)};
+  border: ${props => props.image ? 0 :  (props.dropzone ? `1px dashed ${props.theme.colors.default}` : `1px dashed ${props.theme.colors.gray}`)};
   border-radius: 4px;
   height: 150px;
   cursor: pointer;

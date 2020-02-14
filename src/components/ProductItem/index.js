@@ -6,16 +6,14 @@ import theme from '../../styles/theme';
 
 import {  Item, Image, Title, Price, Detail, DetailTitle  } from './styles';
 
-import parafuso from '../../assets/parafuso.jpg';
-
-export default function ProductItem() {
+export default function ProductItem({ image, price, title, id }) {
   return (
     <ThemeProvider theme={theme}>
       <Item>
-        <Image src={parafuso} alt="Parafuso" />
-        <Title>Parafuso tipo 1</Title>
-        <Price>R$ 5,00</Price>
-        <Detail to="/detail">
+        <Image src={image} alt="Parafuso" />
+        <Title>{title}</Title>
+        <Price>R$ {price}</Price>
+        <Detail to={`/detail/${id}`}>
         <MdSearch size={20} color="#FFF" />
           <DetailTitle>Ver mais</DetailTitle>
         </Detail>
