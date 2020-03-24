@@ -1,4 +1,4 @@
-## Teste RE9IT - Front-end
+## Dashboard (Venda de parafusos) - Front-end
 
 ### Telas do projeto
 
